@@ -1,0 +1,4 @@
+Xây dựng lớp biểu diễn khái niệm số phức với hai thành phần dữ liệu thực, ảo và
+các hàm thành phần xuất, nhập, định giá trị cho số phức, cộng, trừ, nhân, chia
+hai số phức. Viết chương trình cho phép nhập vào hai số phức, in ra kết quả các 
+phép toán cộng, trừ, nhân, chia hai số phức kể trên.

@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build ListUser",
+      "type": "cppbuild",
+      "command": "C:\\mingw64\\bin\\g++.exe",
+      "args": [
+        "-g",
+        "${workspaceFolder}/ListUser/main.cpp",
+        "${workspaceFolder}/ListUser/DataStructures.cpp",
+        "-o",
+        "${workspaceFolder}/ListUser/ListUserProgram.exe"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/ListUser"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Task to build ListUser program"
+    }
+  ]
+}

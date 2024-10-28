@@ -4,6 +4,8 @@
         "compare": "cpp",
         "type_traits": "cpp",
         "initializer_list": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "iosfwd": "cpp",
+        "stdexcept": "cpp"
     }
 }

@@ -2,13 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug ListUserProgram",
+      "name": "Debug MATRANProgram",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/ListUser/ListUserProgram.exe",
+      "program": "${workspaceFolder}/MATRAN/MATRANProgram.exe",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "${workspaceFolder}/ListUser",
+      "cwd": "${workspaceFolder}/MATRAN",
       "environment": [],
       "externalConsole": false,
       "MIMode": "gdb",
@@ -20,7 +20,7 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build ListUser",
+      "preLaunchTask": "build MATRAN",
       "internalConsoleOptions": "openOnSessionStart"
     }
   ]

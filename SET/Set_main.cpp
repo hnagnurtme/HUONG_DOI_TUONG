@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void printSets(const Set& set1, const Set& set2) {
+void printSets(const Set<int>& set1, const Set<int>& set2) {
     cout <<"========================================\n";
     cout << "Tap hop 1 hien tai: " << set1 << endl;
     cout << "Tap hop 2 hien tai: " << set2 << endl;
@@ -11,8 +11,8 @@ void printSets(const Set& set1, const Set& set2) {
 
 int main() {
     int size;
-    Set set1(10);
-    Set set2(10);
+    Set<int> set1(10);
+    Set<int> set2(10);
     cout << "Nhap so luong phan tu tap hop 1: ";
     cin >> size;
     
@@ -68,13 +68,13 @@ int main() {
         cout << "Phan tu " << z << " khong ton tai trong tap hop.\n";
     }
 
-    Set intersection = set1 * set2;
+    Set<int> intersection = set1 * set2;
     cout << "Tap giao: " << intersection << endl;
 
-    Set unionSet = set1 + set2;
+    Set<int> unionSet = set1 + set2;
     cout << "Tap hop: " << unionSet << endl;
 
-    Set difference = set1 - set2;
+    Set<int> difference = set1 - set2;
     cout << "Tap hieu: " << difference << endl;
 
     printSets(set1, set2);

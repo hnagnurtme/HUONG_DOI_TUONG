@@ -7,8 +7,8 @@ int main() {
     cout << "Nhap kich thuoc cua ma tran: ";
     cin >> size;
 
-    Matran mat1(size);
-    Matran mat2(size);
+    Matran<int> mat1(size);
+    Matran<int> mat2(size);
 
     cout << "Nhap cac phan tu cho ma tran 1:" << endl;
     cin >> mat1;
@@ -16,9 +16,9 @@ int main() {
     cout << "Nhap cac phan tu cho ma tran 2:" << endl;
     cin >> mat2;
 
-    Matran tong = mat1 + mat2;
-    Matran hieu = mat1 - mat2;
-    Matran tich = mat1 * mat2;
+    Matran<int> tong = mat1 + mat2;
+    Matran<int> hieu = mat1 - mat2;
+    Matran<int> tich = mat1 * mat2;
 
     cout << "Ma tran 1:" << endl;
     cout << mat1;

@@ -2,25 +2,25 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "build ListUser",
+      "label": "build MATRAN",
       "type": "cppbuild",
       "command": "C:\\mingw64\\bin\\g++.exe",
       "args": [
         "-g",
-        "${workspaceFolder}/ListUser/main.cpp",
-        "${workspaceFolder}/ListUser/DataStructures.cpp",
+        "${workspaceFolder}/MATRAN/Matran_main.cpp",
+        "${workspaceFolder}/MATRAN/Matran.cpp",
         "-o",
-        "${workspaceFolder}/ListUser/ListUserProgram.exe"
+        "${workspaceFolder}/MATRAN/MATRANProgram.exe"
       ],
       "options": {
-        "cwd": "${workspaceFolder}/ListUser"
+        "cwd": "${workspaceFolder}/MATRAN"
       },
       "problemMatcher": ["$gcc"],
       "group": {
         "kind": "build",
         "isDefault": true
       },
-      "detail": "Task to build ListUser program"
+      "detail": "Task to build MATRAN program"
     }
   ]
 }

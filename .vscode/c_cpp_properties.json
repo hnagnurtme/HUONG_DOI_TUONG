@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "name": "windows-gcc-x64",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "C:/mingw64/include",
+        "C:/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include",
+        "C:/QT/6.7.3/mingw_64/include/**",
+        "C:/QT/6.7.3/mingw_64/include/QtCore/**",
+        "C:/QT/6.7.3/mingw_64/include/QtGui/**",
+        "C:/QT/6.7.3/mingw_64/include/QtWidgets/**"
+      ],
+      "compilerPath": "C:/mingw64/bin/gcc.exe",
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+      "intelliSenseMode": "windows-gcc-x64",
+      "compilerArgs": [
+        ""
+      ]
+    }
+  ],
+  "version": 4
+}

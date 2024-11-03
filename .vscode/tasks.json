@@ -7,13 +7,14 @@
       "command": "C:\\mingw64\\bin\\g++.exe",
       "args": [
         "-g",
-        "${workspaceFolder}/MATRAN/Matran_main.cpp",
-        "${workspaceFolder}/MATRAN/Matran.cpp",
+        "${workspaceFolder}/Patient/Main.cpp",
+        "${workspaceFolder}/Patient/Patient.cpp",
+        "${workspaceFolder}/Patient/Doctor.cpp",
         "-o",
-        "${workspaceFolder}/MATRAN/MATRANProgram.exe"
+        "${workspaceFolder}/Patient/PatientProgram.exe"
       ],
       "options": {
-        "cwd": "${workspaceFolder}/MATRAN"
+        "cwd": "${workspaceFolder}/Patient"
       },
       "problemMatcher": ["$gcc"],
       "group": {

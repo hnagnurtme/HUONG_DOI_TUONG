@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <limits>
+#include <algorithm>
 using namespace std;
 
 template<typename T>
@@ -69,13 +70,19 @@ template <typename T>
 bool Set<T>::operator+(const T& x) {
     if (n >= size) return false;
     if (operator()(x)) return false;
+
     data[n++] = x;
+
+    for (int i = n - 1; i > 0 && data[i] < data[i - 1]; i--) {
+        swap(data[i], data[i - 1]);
+    }
     return true;
 }
 
 template <typename T>
 bool Set<T>::operator-(const T& y) {
     if (n == 0) return false;
+
     int index = -1;
     for (int i = 0; i < n; i++) {
         if (data[i] == y) {
@@ -83,13 +90,24 @@ bool Set<T>::operator-(const T& y) {
             break;
         }
     }
+
     if (index == -1) return false;
+
     for (int i = index; i < n - 1; i++) {
         data[i] = data[i + 1];
     }
+
     n--;
+
+    for (int i = index; i < n; i++) {
+        if (data[i] < data[i - 1]) {
+            swap(data[i], data[i - 1]);
+        }
+    }
+
     return true;
 }
+
 
 template <typename T>
 Set<T>& Set<T>::operator=(const Set<T>& set) {

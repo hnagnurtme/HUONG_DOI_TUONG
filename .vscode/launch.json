@@ -5,10 +5,10 @@
       "name": "Debug MATRANProgram",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/Patient/PatientProgram.exe",
+      "program": "${workspaceFolder}/Model/ModelProgram.exe",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "${workspaceFolder}/Patient",
+      "cwd": "${workspaceFolder}/Model",
       "environment": [],
       "externalConsole": false,
       "MIMode": "gdb",
@@ -20,7 +20,7 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build MATRAN",
+      "preLaunchTask": "build PROJECT",
       "internalConsoleOptions": "openOnSessionStart"
     },
     {

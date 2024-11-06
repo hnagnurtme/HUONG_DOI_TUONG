@@ -7,19 +7,19 @@
 #include <iostream>
 
 using namespace std;
-
+class Product;
 class Cart {
 private:
-    Vector<Pair<Product, int>> items;
+    Vector<Pair<Product*, int>> items;
     string customerID;
 public:
     Cart(string id ="");
     void setCartID(string id);
-    void addItem(const Product& product, int quantity);
+    void addItem(Product* product, int quantity);
     void removeItem(string productId);
     void clearCart();
     void displayCartItems() const;
-    Vector<Pair<Product, int>> getItems() const;
+    Vector<Pair<Product*, int>> getItems() const;
     string getCustomerID() const;
     bool contains(const string& productId) const;
     void reduceItem(const string& productId, int quantity);

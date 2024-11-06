@@ -6,12 +6,13 @@
 #include "Cart.h"
 
 using namespace std;
-
+class Product;
+class Cart;
 class Invoice {
 private:
     string invoiceId;
     string customerId;
-    Vector<Pair<Product, int>> products;
+    Vector<Pair<Product*, int>> products;
     string invoiceDate;
     double totalAmount;
     string deliveryDate;
@@ -20,7 +21,7 @@ private:
 public:
     Invoice();
     Invoice(const Cart& cart);
-    Invoice(const string& invoiceId, const string& customerId, const Vector<Pair<Product, int>>& products, double totalAmount);
+    Invoice(const string& invoiceId, const string& customerId, const Vector<Pair<Product*, int>>& products, double totalAmount);
     
     string displayInvoice() const;
     
@@ -36,8 +37,9 @@ public:
     void setTotalAmount(double amount);
     double getTotalAmount() const;
 
-    Vector<Pair<Product, int>> getProducts() const;
+    Vector<Pair<Product*, int>> getProducts() const;
 
     void setDeliveryDate(const string& deliveryDate);
     void setPaymentMethod(const string& paymentMethod);
+    void addProduct(Product* product, int count);
 };

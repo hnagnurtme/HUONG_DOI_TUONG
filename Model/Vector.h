@@ -23,7 +23,7 @@ private:
 public:
     Vector();
     Vector(const Vector &vector);
-    Vector(std::initializer_list<DataType> list);
+    Vector(initializer_list<DataType> list);
     Vector<DataType>& operator=(const Vector &other);
     DataType& operator[](int position);
     const DataType& operator[](int position) const;

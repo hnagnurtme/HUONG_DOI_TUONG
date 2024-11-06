@@ -1,12 +1,12 @@
 #include "Product.h"
 #include <iostream>
 Product::Product() 
-    : productId(""), name(""), category(""), price(0.0), stock(0), description(""), colors(), brand("") {}
+    : productId(""), name(""), category(""), price(0.0), stock(0), imageDescription(""), description(), brand("") {}
 
 Product::Product(string id, const string& name, const string& category, double price, int stock,
-                const string& description, const Vector<string>& colors, const string& brand)
+                const string& imageDescription, const Vector<string>& description, const string& brand)
     : productId(id), name(name), category(category), price(price), stock(stock),
-    description(description), colors(colors), brand(brand) {}
+    imageDescription(imageDescription), description(description), brand(brand) {}
 
 string Product::getProductId() const {
     return productId;
@@ -28,12 +28,12 @@ int Product::getStock() const {
     return stock;
 }
 
-string Product::getDescription() const {
-    return description;
+string Product::getImageDescription() const {
+    return imageDescription;
 }
 
-Vector<string> Product::getColors() const {
-    return colors;
+Vector<string> Product::getDescription() const {
+    return description;
 }
 
 string Product::getBrand() const {
@@ -54,8 +54,8 @@ void Product::setStock(int newStock) {
     stock = newStock;
 }
 
-void Product::setDescription(const string& newDescription) {
-    description = newDescription;
+void Product::setImageDescription(const string& newimageDescription) {
+    imageDescription = newimageDescription;
 }
 
 void Product::displayInfo() const {
@@ -64,11 +64,11 @@ void Product::displayInfo() const {
     cout << "Category: " << category << endl;
     cout << "Price: $" << price << endl;
     cout << "Stock: " << stock << endl;
-    cout << "Description: " << description << endl;
+    cout << "ImageDescription: " << imageDescription << endl;
     cout << endl;
-    cout << "Colors: ";
-    for (long i = 0; i < colors.getSize(); ++i) {
-        cout << colors[i] << " ";
+    cout << "Description: ";
+    for (long i = 0; i < description.getSize(); ++i) {
+        cout << description[i] << " ";
     }
     cout << endl;
     cout << "Brand: " << brand << endl;
@@ -76,4 +76,14 @@ void Product::displayInfo() const {
 
 bool Product::isAvailable(int requestedQuantity) const {
     return requestedQuantity <= stock;
+}
+
+void  Product::addCart(Cart* cart, int quanity){
+    this->cart.pushback(cart);
+    cart->addItem(this,quanity);
+}
+
+void Product::addInvoice(Invoice* invoice, int count){
+    this->invoice.pushback(invoice);
+    invoice->addProduct(this, count);
 }

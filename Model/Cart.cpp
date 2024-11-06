@@ -11,23 +11,24 @@ Cart::Cart(string id) : customerID(id) {}
 void Cart:: setCartID(string id){
     customerID = id; 
 }
-void Cart::addItem(const Product& product, int quantity) {
+void Cart::addItem(Product *product, int quantity) {
     if (quantity <= 0) {
         cerr << "Quantity must be greater than 0." << endl;
         return;
     }
     for (int i = 0; i < items.getSize(); ++i) {
-        if (items[i].getFirst().getProductId() == product.getProductId()) {
+        if (items[i].getFirst()->getProductId() == product->getProductId()) {
             items[i].setSecond(items[i].getSecond() + quantity);
             return;
         }
     }
-    items.pushback(Pair<Product, int>(product, quantity));
+    items.pushback(Pair<Product*, int>(product, quantity));
+    product->addCart(this,quantity);
 }
 
 void Cart::removeItem(string productId) {
     for (int i = 0; i < items.getSize(); ++i) {
-        if (items[i].getFirst().getProductId() == productId) {
+        if (items[i].getFirst()->getProductId() == productId) {
             items.remove(i);
             return;
         }
@@ -48,13 +49,13 @@ void Cart::displayCartItems() const {
     }
     cout << "Cart items:" << endl;
     for (int i = 0; i < items.getSize(); ++i) {
-        cout << "Product ID: " << items[i].getFirst().getProductId()
-            << ", Name: " << items[i].getFirst().getName() 
+        cout << "Product ID: " << items[i].getFirst()->getProductId()
+            << ", Name: " << items[i].getFirst()->getName() 
             << ", Quantity: " << items[i].getSecond() << endl;
     }
 }
 
-Vector<Pair<Product, int>> Cart::getItems() const {
+Vector<Pair<Product*, int>> Cart::getItems() const {
     return items;
 }
 
@@ -64,7 +65,7 @@ string Cart::getCustomerID() const {
 
 bool Cart::contains(const string& productId) const {
     for (long i = 0; i < items.getSize(); ++i) {
-        if (items[i].getFirst().getProductId() == productId) {
+        if (items[i].getFirst()->getProductId() == productId) {
             return true; 
         }
     }
@@ -72,7 +73,7 @@ bool Cart::contains(const string& productId) const {
 }
 void Cart::reduceItem(const string& productId, int quantity) {
     for (long i = 0; i < items.getSize(); ++i) {
-        if (items[i].getFirst().getProductId() == productId) {
+        if (items[i].getFirst()->getProductId() == productId) {
             int currentQuantity = items[i].getSecond();
             if (currentQuantity > quantity) {
                 items[i].setSecond(currentQuantity - quantity); 
@@ -87,7 +88,7 @@ void Cart::reduceItem(const string& productId, int quantity) {
 
 int Cart::getItemQuantity(const string& productId) const {
     for (long i = 0; i < items.getSize(); ++i) {
-        if (items[i].getFirst().getProductId() == productId) {
+        if (items[i].getFirst()->getProductId() == productId) {
             return items[i].getSecond(); 
         }
     }
